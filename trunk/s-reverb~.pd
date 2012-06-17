@@ -22,13 +22,13 @@
 #X obj 130 61 s-reverb-echo \$0-echo-del2 8.45346;
 #X obj 417 383 min 127;
 #X obj 7 25 hsl 64 16 0 127 0 0 \$0/reverb \$1/reverb reverb -2 -6
-0 8 -260818 -1 -1 4735 1;
+0 8 -260818 -1 -1 4900 1;
 #X obj 147 297 *~;
 #X obj 195 297 *~;
 #X obj 7 53 hsl 64 16 0 127 0 0 \$0/wet \$1/wet wet -2 -6 0 8 -260818
--1 -1 85 1;
+-1 -1 99 1;
 #X obj 6 81 hsl 64 16 0 127 0 0 \$0/dry \$1/dry dry -2 -6 0 8 -260818
--1 -1 6300 1;
+-1 -1 2927 1;
 #X obj 154 259 / 127;
 #X obj 75 251 / 127;
 #X obj 54 272 *~;
@@ -50,11 +50,11 @@ is my fault.;
 #X obj 130 109 s-reverb-echo \$0-echo-del4 100;
 #X obj 131 86 s-reverb-echo \$0-echo-del3 79.3165;
 #X obj 663 254 sssad/auto \$0/reverb \$1/reverb;
-#X obj 663 275 sssad/auto \$0/web \$1/wet;
 #X obj 663 296 sssad/auto \$0/dry \$1/dry;
 #X obj 75 231 r \$0/dry;
 #X obj 154 239 r \$0/wet;
 #X obj 417 360 r \$0/reverb;
+#X obj 663 275 sssad/auto \$0/wet \$1/wet;
 #X connect 0 0 19 0;
 #X connect 0 0 29 0;
 #X connect 1 0 5 0;
@@ -112,7 +112,7 @@ is my fault.;
 #X connect 43 1 42 1;
 #X connect 44 0 43 0;
 #X connect 44 1 43 1;
-#X connect 48 0 28 0;
-#X connect 49 0 27 0;
-#X connect 50 0 21 0;
+#X connect 47 0 28 0;
+#X connect 48 0 27 0;
+#X connect 49 0 21 0;
 #X coords 0 0 1 1 100 100 1 0 0;

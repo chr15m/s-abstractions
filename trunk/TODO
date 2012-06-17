@@ -1,3 +1,5 @@
-* make the midi stuff not care about channel unless specified (last argument not first)
+* adsr style envelope with sustain and settable length, which takes midi notes as triggers
+* auto-learning midi input abstractions
+* sample looper like susloop~
 * make the envelope self resizing
-* make 'basic' elements with [sssad]
+* make 'basic' elements (sliders, numberboxes, etc) with [sssad/auto] in them
