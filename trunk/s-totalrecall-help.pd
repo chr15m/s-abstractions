@@ -1,0 +1,16 @@
+#N canvas 293 235 450 300 10;
+#X obj 55 256 print abc;
+#X obj 307 265 print def;
+#X floatatom 55 203 5 0 0 0 - - -;
+#X floatatom 307 210 5 0 0 0 - - -;
+#X obj 55 229 s-tr-node bob abc;
+#X obj 321 7 s-totalrecall bob;
+#X obj 307 236 s-tr-node bob def;
+#X msg 24 181 pants test yo yo;
+#X msg 270 182 rinky dink;
+#X connect 2 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 4 0;
+#X connect 8 0 6 0;
