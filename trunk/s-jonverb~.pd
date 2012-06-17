@@ -33,10 +33,8 @@
 #X obj 211 112 *~ 1;
 #X obj 161 208 outlet~;
 #X obj 211 187 outlet~;
-#X obj 273 78 / 127;
 #X obj 273 57 line;
 #X msg 273 36 \$1 3;
-#X obj 77 125 / 127;
 #X obj 77 104 line;
 #X msg 77 82 \$1 3;
 #X obj 273 15 r \$0/wet;
@@ -51,12 +49,10 @@
 #X connect 8 0 5 1;
 #X connect 8 0 4 1;
 #X connect 9 0 8 0;
-#X connect 10 0 9 0;
-#X connect 11 0 3 1;
-#X connect 12 0 11 0;
-#X connect 13 0 12 0;
-#X connect 14 0 10 0;
-#X connect 15 0 13 0;
+#X connect 10 0 3 1;
+#X connect 11 0 10 0;
+#X connect 12 0 9 0;
+#X connect 13 0 11 0;
 #X restore 15 580 pd output;
 #X msg 1048 553 large;
 #X text 1026 505 some presets:;
@@ -1020,9 +1016,9 @@ decay_diffusion2;
 #X connect 11 1 2 0;
 #X restore 44 540 pd jon~;
 #X obj 12 33 hsl 64 16 0 127 0 1 \$0/wet_dry \$1/wet_dry wet_dry -2
--8 0 8 -260818 -1 -1 3374 1;
+-8 0 8 -260818 -1 -1 3700 1;
 #X obj 9 65 hradio 16 1 0 4 \$0/preset \$1/preset preset 0 -8 0 8 -260818
--1 -1 2;
+-1 -1 0;
 #X obj 930 462 r \$0/preset;
 #X obj 430 37 sssad/auto \$0/more \$1/more;
 #X obj 12 129 hsl 64 16 0 127 0 0 \$0/predelay \$1/predelay predelay
