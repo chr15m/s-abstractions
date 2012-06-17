@@ -1,4 +1,4 @@
-#N canvas 4 20 993 597 10;
+#N canvas 4 20 993 674 10;
 #X obj 394 236 makefilename \$0nbx%d;
 #X obj 394 168 until;
 #X obj 394 190 f;
@@ -37,6 +37,38 @@
 #X msg 921 80 \; \$1 \$2 \;;
 #N canvas 14 28 742 653 \$0connectors 0;
 #X obj 575 4 namecanvas \$0connectors;
+#X obj 5 16 s-connect 1090nbx0 1090/out;
+#X obj 210 16 s-tabval 1090 1090nbx0 0;
+#X obj 5 32 s-connect 1090nbx1 1090/out;
+#X obj 210 32 s-tabval 1090 1090nbx1 1;
+#X obj 5 48 s-connect 1090nbx2 1090/out;
+#X obj 210 48 s-tabval 1090 1090nbx2 2;
+#X obj 5 64 s-connect 1090nbx3 1090/out;
+#X obj 210 64 s-tabval 1090 1090nbx3 3;
+#X obj 5 83 s-connect 1090nbx4 1090/out;
+#X obj 210 83 s-tabval 1090 1090nbx4 4;
+#X obj 5 99 s-connect 1090nbx5 1090/out;
+#X obj 210 99 s-tabval 1090 1090nbx5 5;
+#X obj 5 115 s-connect 1090nbx6 1090/out;
+#X obj 210 115 s-tabval 1090 1090nbx6 6;
+#X obj 5 131 s-connect 1090nbx7 1090/out;
+#X obj 210 131 s-tabval 1090 1090nbx7 7;
+#X obj 5 150 s-connect 1090nbx8 1090/out;
+#X obj 210 150 s-tabval 1090 1090nbx8 8;
+#X obj 5 166 s-connect 1090nbx9 1090/out;
+#X obj 210 166 s-tabval 1090 1090nbx9 9;
+#X obj 5 182 s-connect 1090nbx10 1090/out;
+#X obj 210 182 s-tabval 1090 1090nbx10 10;
+#X obj 5 198 s-connect 1090nbx11 1090/out;
+#X obj 210 198 s-tabval 1090 1090nbx11 11;
+#X obj 5 217 s-connect 1090nbx12 1090/out;
+#X obj 210 217 s-tabval 1090 1090nbx12 12;
+#X obj 5 233 s-connect 1090nbx13 1090/out;
+#X obj 210 233 s-tabval 1090 1090nbx13 13;
+#X obj 5 249 s-connect 1090nbx14 1090/out;
+#X obj 210 249 s-tabval 1090 1090nbx14 14;
+#X obj 5 265 s-connect 1090nbx15 1090/out;
+#X obj 210 265 s-tabval 1090 1090nbx15 15;
 #X restore 715 9 pd \$0connectors;
 #X msg 562 275 \; \$1tracker donecanvasdialog 1 -1 1 0 -1 0 \$2 80
 \$2 0 0;
@@ -181,6 +213,9 @@
 #X msg 394 575 \; \$4tracker obj 24 \$3 nbx 3 14 0 127 0 0 \$1 \$1
 \$2 -20 8 0 8 -260818 -1 -1 0 256 \; \$4connectors obj 5 \$3 s-connect
 \$1 \$4/out \; \$4connectors obj 210 \$3 s-tabval \$4 \$1 \$5 \;;
+#X obj 668 186 r \$1/sequence;
+#X text 3 455 WATCH OUT WHEN SAVING - DYNAMIC PATCH! Delete the number
+boxes.;
 #X connect 0 0 52 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -238,4 +273,5 @@
 #X connect 51 3 8 0;
 #X connect 51 4 52 4;
 #X connect 52 0 53 0;
-#X coords 0 -1 1 284 80 284 1 0 0;
+#X connect 54 0 46 0;
+#X coords 0 -1 1 284 80 80 1 0 0;

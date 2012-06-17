@@ -17,10 +17,10 @@
 #X obj 494 343 / 229.335;
 #X obj 443 343 / 44.1;
 #X obj 352 130 loadbang;
-#X obj 6 24 nbx 2 14 0 127 0 1 \$0/position \$0/position position 28
+#X obj 6 24 nbx 3 14 0 512 0 1 \$0/position \$0/position position 34
 10 0 8 -260818 -1 -1 0 256;
-#X obj 6 42 nbx 3 14 0 127 0 1 \$0/slices \$0/slices slices 34 10 0
-8 -260818 -1 -1 16 256;
+#X obj 6 42 nbx 3 14 0 512 0 1 \$0/slices \$0/slices slices 34 10 0
+8 -260818 -1 -1 128 256;
 #X obj 303 183 f;
 #X obj 303 281 / 16;
 #X obj 247 166 mod;
