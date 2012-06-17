@@ -4,7 +4,7 @@
 #X obj 522 157 timer;
 #X obj 443 233 list prepend;
 #X obj 5 22 tgl 16 0 \$0/store \$1/store store 19 8 0 8 -260818 -1
--1 0 1;
+-1 1 1;
 #X obj 5 43 bng 16 250 50 0 \$0/recall \$1/recall recall 19 8 0 8 -260818
 -1 -1;
 #X obj 410 23 r \$1/stream;
@@ -38,6 +38,9 @@
 #X obj 273 188 r \$0/load;
 #X obj 273 211 openpanel;
 #X msg 273 234 read \$1;
+#X obj 114 187 r \$1/saveas;
+#X obj 107 246 list prepend write;
+#X obj 119 288 list trim;
 #X connect 0 0 16 0;
 #X connect 1 0 9 0;
 #X connect 2 0 24 0;
@@ -70,4 +73,7 @@
 #X connect 32 0 33 0;
 #X connect 33 0 34 0;
 #X connect 34 0 16 0;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;
+#X connect 37 0 16 0;
 #X coords 0 -1 1 1 85 106 1 0 0;
