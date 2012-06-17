@@ -79,12 +79,12 @@ reverberation topology in the style of Griesinger" from the article
 #X obj 33 48 r \$0.predelay;
 #X obj 52 105 r \$0.bandwidth;
 #X obj 73 159 r \$0.damping;
-#X obj 101 213 r \$0.decay;
 #X obj 126 267 r \$0.input_diffusion1;
 #X obj 138 322 r \$0.input_diffusion2;
 #X obj 146 383 r \$0.decay_diffusion1;
 #X obj 155 442 r \$0.decay_diffusion2;
 #X obj 193 503 r \$0.excursion;
+#X obj 101 213 r \$0.decay_time;
 #X connect 0 0 9 0;
 #X connect 1 0 9 0;
 #X connect 2 0 9 0;
@@ -97,12 +97,12 @@ reverberation topology in the style of Griesinger" from the article
 #X connect 10 0 4 0;
 #X connect 11 0 5 0;
 #X connect 12 0 6 0;
-#X connect 13 0 7 0;
-#X connect 14 0 0 0;
-#X connect 15 0 1 0;
-#X connect 16 0 2 0;
-#X connect 17 0 3 0;
-#X connect 18 0 8 0;
+#X connect 13 0 0 0;
+#X connect 14 0 1 0;
+#X connect 15 0 2 0;
+#X connect 16 0 3 0;
+#X connect 17 0 8 0;
+#X connect 18 0 7 0;
 #X restore 88 484 pd receive_\$0/params;
 #X obj 163 6 namecanvas \$0/jonverb;
 #X text 714 9 This reverb was implemented by Anton Hornquist. I have
@@ -111,11 +111,11 @@ my own.;
 #X obj 15 484 inlet~;
 #X obj 72 626 outlet~;
 #X floatatom 852 221 10 0 0 0 - #0/param3 #0.damping;
-#X floatatom 852 252 10 0 0 0 - #0/param4 #0.decay;
+#X floatatom 852 252 10 0 0 0 - #0/param4 #0.decay_time;
 #X floatatom 852 157 10 0 0 0 - #0/param1 #0.predelay;
 #X floatatom 852 189 10 0 0 0 - #0/param2 #0.bandwidth;
 #X floatatom 851 320 10 0 0 0 - #0/param6 #0.input_diffusion2;
-#X floatatom 852 285 10 0 0 0 - #0/param #0.input_diffusion1;
+#X floatatom 852 285 10 0 0 0 - #0/param5 #0.input_diffusion1;
 #X floatatom 850 384 10 0 0 0 - #0/param8 #0.decay_diffusion2;
 #X floatatom 851 351 10 0 0 0 - #0/param7 #0.decay_diffusion1;
 #X floatatom 850 416 10 0 0 0 - #0/param9 #0.excursion;
@@ -1022,7 +1022,7 @@ decay_diffusion2;
 #X obj 12 33 hsl 64 16 0 127 0 1 \$0/wet_dry \$1/wet_dry wet_dry -2
 -8 0 8 -260818 -1 -1 3374 1;
 #X obj 9 65 hradio 16 1 0 4 \$0/preset \$1/preset preset 0 -8 0 8 -260818
--1 -1 1;
+-1 -1 2;
 #X obj 930 462 r \$0/preset;
 #X obj 430 37 sssad/auto \$0/more \$1/more;
 #X obj 12 129 hsl 64 16 0 127 0 0 \$0/predelay \$1/predelay predelay
@@ -1032,16 +1032,16 @@ decay_diffusion2;
 #X obj 940 196 * 250;
 #X obj 940 217 s \$0/param1;
 #X obj 10 193 hsl 64 16 0 127 0 0 \$0/excursion \$1/excursion excursion
--2 -8 0 8 -260818 -1 -1 6300 1;
+-2 -8 0 8 -260818 -1 -1 0 1;
 #X obj 1040 174 / 127;
 #X obj 11 161 hsl 64 16 0 127 0 0 \$0/damping \$1/damping damping -2
--8 0 8 -260818 -1 -1 4600 1;
+-8 0 8 -260818 -1 -1 0 1;
 #X obj 940 308 * 21829.5;
 #X obj 940 329 + 220.5;
 #X obj 940 244 r \$0/damping;
 #X obj 940 350 s \$0/param3;
-#X obj 12 97 hsl 64 16 0 127 0 0 \$0/decay \$1/decay decay -2 -8 0
-8 -260818 -1 -1 6300 1;
+#X obj 12 97 hsl 64 16 0 127 0 0 \$0/decay_time \$1/decay_time decay_time
+-2 -8 0 8 -260818 -1 -1 0 1;
 #X obj 1041 311 s \$0/param4;
 #X obj 1040 153 r \$0/excursion;
 #X obj 1040 195 * 10;
@@ -1064,7 +1064,7 @@ decay_diffusion2;
 #X obj 505 363 s \$0/wet;
 #X obj 476 309 expr (127 - $f1) / 63;
 #X obj 430 83 sssad/auto \$0/decay_time \$1/decay_time;
-#X obj 1041 267 r \$0/decay;
+#X obj 1041 267 r \$0/decay_time;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 22 0;
