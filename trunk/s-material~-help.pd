@@ -1,0 +1,33 @@
+#N canvas 252 18 436 403 10;
+#X obj 15 155 s-rubber~ pants;
+#X obj 15 87 clip~ -1 1;
+#X obj 100 106 line;
+#X obj 100 130 s pants/length;
+#X obj 15 114 hip~ 5;
+#X obj 15 244 s-material~ d;
+#X obj 15 312 s-ezdac~ yo;
+#X obj 15 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 99 87 0 \, 127 500;
+#N canvas 0 0 450 300 datastore 0;
+#X obj 10 10 r SSSADDATA;
+#X msg 10 30 \; SSSAD yo/volume 46.3651 \; SSSAD yo/pan 61.9881 \;
+SSSAD pants/feedback 96.7619 \; SSSAD pants/length 127 \; SSSAD_ADMIN
+set \;;
+#X connect 0 0 1 0;
+#X restore 309 27 pd datastore;
+#X obj 309 49 sssad/datastore;
+#X text 216 88 1 hit me ->;
+#X text 160 283 <- 3 change me;
+#X text 47 30 <- 2 press me lots;
+#X text 24 3 Materials are by Andy Farnell. I stole this from netpd.
+;
+#X connect 0 0 5 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 7 0 1 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 0;
