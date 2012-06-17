@@ -1,0 +1,3 @@
+* make the midi stuff not care about channel unless specified (last argument not first)
+* make the envelope self resizing
+* make 'basic' elements with [sssad]

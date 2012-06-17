@@ -1,0 +1,43 @@
+#N canvas 0 0 733 629 10;
+#X text 40 597 Hint: get creative with the [OSCroute] external!;
+#X obj 6 22 bng 14 250 50 0 \$0-save empty save 17 7 0 8 -128992 -66577
+-1;
+#X obj 6 40 bng 14 250 50 0 \$0-load empty load 17 7 0 8 -128992 -1
+-1;
+#X obj 16 103 r \$0-load;
+#X text 103 27 This abstraction and all the other sssad state saving
+stuff is due to the genius of Frank Barknecht. Any mistakes are purely
+my own.;
+#X text 84 104 if the load button is pressed;
+#X msg 154 322 \; pd-datastore clear \; pd-datastore obj 10 10 r SSSADDATA
+\; pd-datastore msg 10 30 \; pd-datastore connect 0 0 1 0 \;;
+#X obj 442 321 r SSSAD_ADMIN;
+#X obj 442 376 route persist;
+#X obj 442 346 list trim;
+#X obj 442 432 list trim;
+#X msg 96 239 save;
+#X obj 118 444 s SSSAD_ADMIN;
+#X obj 442 408 list prepend add SSSAD;
+#X msg 140 404 set \, addsemi;
+#X msg 96 472 add SSSAD_ADMIN set;
+#X obj 16 126 s SSSADDATA;
+#X obj 233 511 s SSSADDATA;
+#X obj 96 215 r \$0-save;
+#X obj 96 262 t b a b b b;
+#X obj 168 287 s SSSAD_SAVE;
+#X connect 3 0 16 0;
+#X connect 7 0 9 0;
+#X connect 8 0 13 0;
+#X connect 9 0 8 0;
+#X connect 10 0 17 0;
+#X connect 11 0 19 0;
+#X connect 13 0 10 0;
+#X connect 14 0 17 0;
+#X connect 15 0 17 0;
+#X connect 18 0 11 0;
+#X connect 19 0 15 0;
+#X connect 19 1 12 0;
+#X connect 19 2 14 0;
+#X connect 19 3 6 0;
+#X connect 19 4 20 0;
+#X coords 0 -1 1 1 85 60 1 0 0;

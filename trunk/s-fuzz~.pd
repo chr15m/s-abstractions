@@ -1,0 +1,27 @@
+#N canvas 334 177 478 445 10;
+#X obj 179 173 -~;
+#X obj 200 135 wrap~;
+#X obj 179 224 +~;
+#X obj 179 79 inlet~;
+#X obj 179 277 outlet~;
+#X obj 179 199 /~ 30;
+#X obj 179 105 *~ 30;
+#X obj 10 33 hsl 64 16 127 0 0 0 \$0/fuxx \$1/fuxx fuxx -2 -6 0 8 -260818
+-1 -1 0 1;
+#X obj 266 65 * 100;
+#X obj 179 250 s-jail;
+#X obj 266 44 / 127;
+#X obj 266 19 r \$0/fuxx;
+#X connect 0 0 5 0;
+#X connect 1 0 0 1;
+#X connect 2 0 9 0;
+#X connect 3 0 6 0;
+#X connect 5 0 2 0;
+#X connect 6 0 0 0;
+#X connect 6 0 1 0;
+#X connect 8 0 6 1;
+#X connect 8 0 5 1;
+#X connect 9 0 4 0;
+#X connect 10 0 8 0;
+#X connect 11 0 10 0;
+#X coords 0 0 1 1 100 55 1 0 0;
