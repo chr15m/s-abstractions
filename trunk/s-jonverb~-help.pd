@@ -1,4 +1,4 @@
-#N canvas 723 200 457 496 10;
+#N canvas 142 201 457 496 10;
 #X obj 76 66 osc~ 440;
 #X floatatom 13 10 5 0 0 0 - - -;
 #X obj 76 43 mtof;
@@ -6,15 +6,19 @@
 #X obj 13 66 line~;
 #X obj 13 403 s-ezdac~ out;
 #X msg 13 43 1 \, 0 50;
-#N canvas 0 0 450 300 datastore 0;
+#N canvas 681 51 450 300 datastore 0;
 #X obj 10 10 r SSSADDATA;
-#X msg 10 30 \; SSSAD hello/dry 127 \; SSSAD hello/more 0 \; SSSAD
-hello/wet 127 \; SSSAD out/volume 66.5238 \; SSSAD out/pan 61.9881
-\; SSSAD_ADMIN set \;;
+#X msg 10 30 \; SSSAD hello/decay_time 24.1905 \; SSSAD hello/wet_dry
+63.9838 \; SSSAD hello/excursion 20.1587 \; SSSAD hello/damping 106.841
+\; SSSAD hello/predelay 0 \; SSSAD hello/preset 2 \; SSSAD hello/more
+\; SSSAD out/volume 76.6032 \; SSSAD out/pan 61.9881 \; SSSAD_ADMIN
+set \;;
 #X connect 0 0 1 0;
 #X restore 333 8 pd datastore;
 #X obj 333 29 sssad/datastore;
-#X obj 13 123 s-jonverb~ hello;
+#X obj 14 120 s-jonverb~ hello;
+#X text 224 69 1 click me ->;
+#X text 73 8 <- 2 turn me up to 60 and down;
 #X connect 0 0 3 1;
 #X connect 1 0 2 0;
 #X connect 1 0 6 0;

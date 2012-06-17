@@ -1,43 +1,29 @@
-#N canvas 29 50 1141 658 10;
+#N canvas 33 39 1183 658 10;
 #N canvas 505 106 622 480 presets 0;
 #X obj 43 5 inlet;
-#X obj 43 92 route default large large_noexcursion huge huge_noexcursion
-tadada;
 #X obj 43 69 list trim;
 #X obj 43 25 list append \$0;
 #X obj 43 47 list append \$1;
-#X msg 43 180 \; \$2/predelay 0 \; \$2/bandwidth 127 \; \$2/damping
-127 \; \$2/decay 64 \; \$1/param 0.75 \; \$1/param6 0.625 \; \$1/param7
-0.7 \; \$1/param8 0.5 \; \$1/param9 0.53761 \;;
-#X msg 228 180 \; \$2/predelay 0 \; \$2/bandwidth 56.8953 \; \$2/damping
-25.6944 \; \$2/decay 125 \; \$1/param 0.685 \; \$1/param6 0.779 \;
-\$1/param7 0.74 \; \$1/param8 0.68 \; \$1/param9 0 \;;
-#X msg 407 182 \; \$2/predelay 5.08 \; \$2/bandwidth 56.8953 \; \$2/damping
-25.6944 \; \$2/decay 126 \; \$1/param 0.685 \; \$1/param6 0.779 \;
-\$1/param7 0.889 \; \$1/param8 0.84 \; \$1/param9 0 \;;
-#X msg 227 331 \; \$2/predelay 5.08 \; \$2/bandwidth 56.8953 \; \$2/damping
-25.6944 \; \$2/decay 126 \; \$1/param 0.685 \; \$1/param6 0.779 \;
-\$1/param7 0.889 \; \$1/param8 0.84 \; \$1/param9 0.53761 \;;
-#X msg 44 331 \; \$2/predelay 0 \; \$2/bandwidth 56.8953 \; \$2/damping
-25.6944 \; \$2/decay 125 \; \$1/param 0.685 \; \$1/param6 0.779 \;
-\$1/param7 0.74 \; \$1/param8 0.68 \; \$1/param9 0.53761 \;;
-#X msg 407 331 \; \$2/predelay 110 \; \$2/bandwidth 127 \; \$2/damping
-127 \; \$2/decay 86 \; \$1/param 0.850394 \; \$1/param6 0.92126 \;
-\$1/param7 0.80315 \; \$1/param8 0.818898 \; \$1/param9 0.11811 \;
-;
-#X connect 0 0 3 0;
-#X connect 1 0 5 0;
-#X connect 1 1 9 0;
-#X connect 1 2 6 0;
-#X connect 1 3 8 0;
-#X connect 1 4 7 0;
-#X connect 1 5 10 0;
-#X connect 2 0 1 0;
-#X connect 3 0 4 0;
-#X connect 4 0 2 0;
-#X restore 523 594 pd presets;
-#X msg 523 452 default;
-#X msg 523 521 huge;
+#X msg 42 130 \; \$1/param2 22050 \; \$1/param5 0.75 \; \$1/param6
+0.625 \; \$1/param7 0.7 \; \$1/param8 0.5 \;;
+#X msg 42 228 \; \$1/param2 10000 \; \$1/param5 0.685 \; \$1/param6
+0.779 \; \$1/param7 0.74 \; \$1/param8 0.68 \;;
+#X msg 171 228 \; \$1/param2 10000 \; \$1/param5 0.685 \; \$1/param6
+0.779 \; \$1/param7 0.889 \; \$1/param8 0.84 \;;
+#X msg 302 228 \; \$1/param2 22050 \; \$1/param5 0.850394 \; \$1/param6
+0.92126 \; \$1/param7 0.80315 \; \$1/param8 0.818898 \;;
+#X obj 42 93 route default large huge tadada;
+#X connect 0 0 2 0;
+#X connect 1 0 8 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 8 0 4 0;
+#X connect 8 1 5 0;
+#X connect 8 2 6 0;
+#X connect 8 3 7 0;
+#X restore 1048 623 pd presets;
+#X msg 1048 530 default;
+#X msg 1048 576 huge;
 #N canvas 505 91 600 322 output 0;
 #X obj 54 36 inlet~;
 #X obj 161 21 inlet~;
@@ -72,35 +58,33 @@ tadada;
 #X connect 14 0 10 0;
 #X connect 15 0 13 0;
 #X restore 15 580 pd output;
-#X msg 523 544 huge_noexcursion;
-#X msg 523 475 large;
-#X msg 523 498 large_noexcursion;
-#X text 501 427 some presets:;
+#X msg 1048 553 large;
+#X text 1026 505 some presets:;
 #X text 713 66 jon~ - Reverb abstraction based on "Simplified plate-class
 reverberation topology in the style of Griesinger" from the article
 "Effect Design \, Part 1: Reverberator and Other Filters" by Jon Dattorro.
 ;
-#X msg 523 567 tadada;
+#X msg 1048 599 tadada;
 #N canvas 66 24 387 608 receive_\$0/params 0;
-#X msg 58 293 input_diffusion1 \$1;
-#X msg 70 349 input_diffusion2 \$1;
-#X msg 78 410 decay_diffusion1 \$1;
-#X msg 87 469 decay_diffusion2 \$1;
+#X msg 126 293 input_diffusion1 \$1;
+#X msg 138 349 input_diffusion2 \$1;
+#X msg 146 410 decay_diffusion1 \$1;
+#X msg 155 469 decay_diffusion2 \$1;
 #X msg 33 75 predelay \$1;
-#X msg 33 132 bandwidth \$1;
-#X msg 33 183 damping \$1;
-#X msg 33 238 decay \$1;
-#X msg 125 533 excursion \$1;
-#X obj 33 547 outlet;
-#X obj 33 48 r predelay;
-#X obj 33 105 r bandwidth;
-#X obj 33 159 r damping;
-#X obj 33 213 r decay;
-#X obj 58 268 r input_diffusion1;
-#X obj 70 322 r input_diffusion2;
-#X obj 78 383 r decay_diffusion1;
-#X obj 87 442 r decay_diffusion2;
-#X obj 125 503 r excursion;
+#X msg 52 132 bandwidth \$1;
+#X msg 73 183 damping \$1;
+#X msg 101 238 decay \$1;
+#X msg 193 533 excursion \$1;
+#X obj 33 581 outlet;
+#X obj 33 48 r \$0.predelay;
+#X obj 52 105 r \$0.bandwidth;
+#X obj 73 159 r \$0.damping;
+#X obj 101 213 r \$0.decay;
+#X obj 126 267 r \$0.input_diffusion1;
+#X obj 138 322 r \$0.input_diffusion2;
+#X obj 146 383 r \$0.decay_diffusion1;
+#X obj 155 442 r \$0.decay_diffusion2;
+#X obj 193 503 r \$0.excursion;
 #X connect 0 0 9 0;
 #X connect 1 0 9 0;
 #X connect 2 0 9 0;
@@ -120,48 +104,23 @@ reverberation topology in the style of Griesinger" from the article
 #X connect 17 0 3 0;
 #X connect 18 0 8 0;
 #X restore 88 484 pd receive_\$0/params;
-#X obj 734 557 \$0;
-#X obj 734 487 sel 0 1;
-#X obj 734 536 t b f;
-#X obj 734 579 pack f f;
-#X obj 734 466 r \$0/more;
-#X msg 734 601 \; \$1/jonverb donecanvasdialog 1 -1 1 0 -1 0 \$2 140
-\$2 0 0;
 #X obj 163 6 namecanvas \$0/jonverb;
 #X text 714 9 This reverb was implemented by Anton Hornquist. I have
 left his original comments in the paragraph below. Any mistakes are
 my own.;
 #X obj 15 484 inlet~;
 #X obj 72 626 outlet~;
-#X obj 720 222 hsl 128 15 220.5 22050 1 0 \$0/param3 \$0/param3 damping
--2 -8 0 10 -262144 -1 -1 12700 0;
-#X floatatom 852 221 10 0 0 0 - #0/param3 damping;
-#X obj 720 253 hsl 128 15 0 1 0 0 \$0/param4 \$0/param4 decay -2 -8
-0 10 -262144 -1 -1 6400 0;
-#X floatatom 852 252 10 0 0 0 - #0/param4 decay;
-#X obj 720 158 hsl 128 15 0 250 0 0 \$0/param1 \$0/param1 predelay
--2 -8 0 10 -262144 -1 -1 0 0;
-#X floatatom 852 157 10 0 0 0 - #0/param1 predelay;
-#X obj 720 190 hsl 128 15 220.5 22050 1 0 \$0/param2 \$0/param2 bandwidth
--2 -8 0 10 -262144 -1 -1 12700 0;
-#X floatatom 852 189 10 0 0 0 - #0/param2 bandwidth;
-#X obj 719 321 hsl 128 15 0 1 0 0 \$0/param6 \$0/param6 input_diffusion_2
--2 -8 0 10 -262144 -1 -1 7937 0;
-#X floatatom 851 320 10 0 0 0 - #0/param6 input_diffusion2;
-#X obj 720 286 hsl 128 15 0 1 0 0 \$0/param \$0/param input_diffusion_1
--2 -8 0 10 -262144 -1 -1 9525 0;
-#X floatatom 852 285 10 0 0 0 - #0/param input_diffusion1;
-#X obj 718 385 hsl 128 15 0 1 0 0 \$0/param8 \$0/param8 decay_diffusion_2
--2 -8 0 10 -262144 -1 -1 6350 0;
-#X floatatom 850 384 10 0 0 0 - #0/param8 decay_diffusion2;
-#X obj 719 352 hsl 128 15 0 1 0 0 \$0/param7 \$0/param7 decay_diffusion_1
--2 -8 0 10 -262144 -1 -1 8890 0;
-#X floatatom 851 351 10 0 0 0 - #0/param7 decay_diffusion1;
-#X obj 718 417 hsl 128 15 0 5 0 0 \$0/param9 \$0/param9 excursion -2
--8 0 10 -262144 -1 -1 1366 0;
-#X floatatom 850 416 10 0 0 0 - #0/param9 excursion;
+#X floatatom 852 221 10 0 0 0 - #0/param3 #0.damping;
+#X floatatom 852 252 10 0 0 0 - #0/param4 #0.decay;
+#X floatatom 852 157 10 0 0 0 - #0/param1 #0.predelay;
+#X floatatom 852 189 10 0 0 0 - #0/param2 #0.bandwidth;
+#X floatatom 851 320 10 0 0 0 - #0/param6 #0.input_diffusion2;
+#X floatatom 852 285 10 0 0 0 - #0/param #0.input_diffusion1;
+#X floatatom 850 384 10 0 0 0 - #0/param8 #0.decay_diffusion2;
+#X floatatom 851 351 10 0 0 0 - #0/param7 #0.decay_diffusion1;
+#X floatatom 850 416 10 0 0 0 - #0/param9 #0.excursion;
 #X obj 14 626 outlet~;
-#N canvas 0 0 450 358 jon~ 0;
+#N canvas 434 211 450 358 jon~ 0;
 #X obj 24 32 inlet~;
 #X obj 27 282 outlet~;
 #X obj 135 282 outlet~;
@@ -783,7 +742,7 @@ my own.;
 #X connect 2 0 1 0;
 #X connect 3 0 2 1;
 #X restore 25 137 pd bandwidth;
-#N canvas 0 43 903 567 \$0/params 0;
+#N canvas 175 38 903 567 \$0/params 0;
 #X obj 44 29 inlet;
 #X obj 44 158 s \$0-predelay;
 #X obj 161 158 s \$0-bandwidth;
@@ -797,26 +756,6 @@ decay_diffusion2;
 #X obj 400 313 s \$0-decay_diffusion1;
 #X obj 580 314 s \$0-decay_diffusion2;
 #X obj 42 450 s \$0-excursion;
-#N canvas 295 162 450 343 default 0;
-#X obj 55 33 inlet;
-#X obj 55 299 outlet;
-#X obj 194 34 loadbang;
-#X obj 231 144 f 0;
-#X obj 55 198 f;
-#X obj 194 69 t b b;
-#X obj 174 97 f \$1;
-#X obj 174 124 sel 0;
-#X text 269 145 default;
-#X text 250 97 argument;
-#X connect 0 0 4 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 4 0 1 0;
-#X connect 5 0 6 0;
-#X connect 5 1 3 0;
-#X connect 6 0 7 0;
-#X connect 7 1 4 0;
-#X restore 44 110 pd default;
 #N canvas 295 162 450 343 default 0;
 #X obj 55 33 inlet;
 #X obj 55 299 outlet;
@@ -980,27 +919,26 @@ decay_diffusion2;
 #X obj 42 361 route excursion;
 #X obj 218 416 print jon~_nosuch\$0/parameter;
 #X connect 0 0 4 0;
-#X connect 3 0 16 0;
-#X connect 3 1 17 0;
-#X connect 3 2 18 0;
-#X connect 3 3 19 0;
-#X connect 3 4 21 0;
-#X connect 4 0 12 0;
-#X connect 4 1 13 0;
-#X connect 4 2 14 0;
-#X connect 4 3 15 0;
+#X connect 3 0 15 0;
+#X connect 3 1 16 0;
+#X connect 3 2 17 0;
+#X connect 3 3 18 0;
+#X connect 3 4 20 0;
+#X connect 4 0 1 0;
+#X connect 4 1 12 0;
+#X connect 4 2 13 0;
+#X connect 4 3 14 0;
 #X connect 4 4 3 0;
-#X connect 12 0 1 0;
-#X connect 13 0 2 0;
-#X connect 14 0 5 0;
-#X connect 15 0 6 0;
-#X connect 16 0 7 0;
-#X connect 17 0 8 0;
-#X connect 18 0 9 0;
-#X connect 19 0 10 0;
-#X connect 20 0 11 0;
-#X connect 21 0 20 0;
-#X connect 21 1 22 0;
+#X connect 12 0 2 0;
+#X connect 13 0 5 0;
+#X connect 14 0 6 0;
+#X connect 15 0 7 0;
+#X connect 16 0 8 0;
+#X connect 17 0 9 0;
+#X connect 18 0 10 0;
+#X connect 19 0 11 0;
+#X connect 20 0 19 0;
+#X connect 20 1 21 0;
 #X restore 223 72 pd \$0/params;
 #N canvas 0 0 458 308 1/2 0;
 #X obj 102 56 inlet~;
@@ -1081,87 +1019,89 @@ decay_diffusion2;
 #X connect 11 0 1 0;
 #X connect 11 1 2 0;
 #X restore 44 540 pd jon~;
-#X obj 12 33 hsl 64 16 0 127 0 1 \$0/wet \$1/wet wet -2 -8 0 8 -260818
--1 -1 6300 1;
-#X obj 12 66 hsl 64 16 0 127 0 1 \$0/dry \$1/dry dry -2 -8 0 8 -260818
--1 -1 6300 1;
-#X msg 734 510 120;
-#X obj 9 98 hradio 16 1 0 6 \$0/preset \$1/preset preset 0 -8 0 8 -260818
--1 -1 0;
-#X obj 405 384 r \$0/preset;
-#X obj 405 405 sel 0 1 2 3 4 5;
-#X obj 473 7 sssad/auto \$0/wet \$1/wet;
-#X obj 87 66 tgl 16 0 \$0/more \$1/more more 20 8 0 8 -260818 -1 -1
-0 1;
-#X obj 473 51 sssad/auto \$0/more \$1/more;
-#X obj 473 29 sssad/auto \$0/wet \$1/dry;
-#X obj 11 134 hsl 64 16 0 127 0 0 \$0/predelay \$1/predelay predelay
+#X obj 12 33 hsl 64 16 0 127 0 1 \$0/wet_dry \$1/wet_dry wet_dry -2
+-8 0 8 -260818 -1 -1 3374 1;
+#X obj 9 65 hradio 16 1 0 4 \$0/preset \$1/preset preset 0 -8 0 8 -260818
+-1 -1 1;
+#X obj 930 462 r \$0/preset;
+#X obj 430 37 sssad/auto \$0/more \$1/more;
+#X obj 12 129 hsl 64 16 0 127 0 0 \$0/predelay \$1/predelay predelay
 -2 -8 0 8 -260818 -1 -1 0 1;
 #X obj 940 154 r \$0/predelay;
 #X obj 940 175 / 127;
 #X obj 940 196 * 250;
 #X obj 940 217 s \$0/param1;
-#X obj 11 166 hsl 64 16 0 127 0 0 \$0/bandwidth \$1/bandwidth bandwidth
+#X obj 10 193 hsl 64 16 0 127 0 0 \$0/excursion \$1/excursion excursion
 -2 -8 0 8 -260818 -1 -1 6300 1;
 #X obj 1040 174 / 127;
-#X obj 1040 153 r \$0/bandwidth;
-#X obj 1040 237 s \$0/param2;
-#X obj 1040 195 * 21829.5;
-#X obj 1040 216 + 220.5;
-#X obj 11 198 hsl 64 16 0 127 0 0 \$0/damping \$1/damping damping -2
--8 0 8 -260818 -1 -1 6300 1;
-#X obj 940 281 / 127;
-#X obj 940 302 * 21829.5;
-#X obj 940 323 + 220.5;
-#X obj 940 261 r \$0/damping;
-#X obj 940 344 s \$0/param3;
-#X obj 11 231 hsl 64 16 0 127 0 0 \$0/decay \$1/decay decay -2 -8 0
-8 -260818 -1 -1 3175 1;
-#X obj 1043 264 r \$0/decay;
-#X obj 1043 285 / 127;
-#X obj 1043 307 s \$0/param4;
-#X msg 771 510 250;
+#X obj 11 161 hsl 64 16 0 127 0 0 \$0/damping \$1/damping damping -2
+-8 0 8 -260818 -1 -1 4600 1;
+#X obj 940 308 * 21829.5;
+#X obj 940 329 + 220.5;
+#X obj 940 244 r \$0/damping;
+#X obj 940 350 s \$0/param3;
+#X obj 12 97 hsl 64 16 0 127 0 0 \$0/decay \$1/decay decay -2 -8 0
+8 -260818 -1 -1 6300 1;
+#X obj 1041 311 s \$0/param4;
+#X obj 1040 153 r \$0/excursion;
+#X obj 1040 195 * 10;
+#X obj 1040 216 s \$0/param9;
+#X obj 930 483 sel 0 1 2 3;
+#X obj 430 60 sssad/auto \$0/preset \$1/preset;
+#X obj 430 106 sssad/auto \$0/predelay \$1/predelay;
+#X obj 430 129 sssad/auto \$0/damping \$1/damping;
+#X obj 430 152 sssad/auto \$0/excursion \$1/excursion;
+#X obj 1041 289 / 127;
+#X obj 940 265 - 127;
+#X obj 940 287 / -127;
+#X obj 505 232 r \$0/wet_dry;
+#X obj 505 254 moses 64;
+#X obj 430 14 sssad/auto \$0/wet_dry \$1/wet_dry;
+#X msg 505 334 1;
+#X msg 556 334 1;
+#X obj 595 334 / 64;
+#X obj 568 363 s \$0/dry;
+#X obj 505 363 s \$0/wet;
+#X obj 476 309 expr (127 - $f1) / 63;
+#X obj 430 83 sssad/auto \$0/decay_time \$1/decay_time;
+#X obj 1041 267 r \$0/decay;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
-#X connect 3 0 39 0;
-#X connect 3 1 20 0;
+#X connect 3 0 22 0;
+#X connect 3 1 12 0;
 #X connect 4 0 0 0;
-#X connect 5 0 0 0;
-#X connect 6 0 0 0;
-#X connect 9 0 0 0;
-#X connect 10 0 40 2;
-#X connect 11 0 14 0;
-#X connect 12 0 43 0;
-#X connect 12 1 72 0;
-#X connect 13 0 11 0;
-#X connect 13 1 14 1;
-#X connect 14 0 16 0;
-#X connect 15 0 12 0;
-#X connect 19 0 3 0;
-#X connect 19 0 40 1;
-#X connect 19 0 40 0;
-#X connect 40 0 3 1;
-#X connect 40 1 3 2;
-#X connect 43 0 13 0;
-#X connect 45 0 46 0;
-#X connect 46 0 1 0;
-#X connect 46 1 5 0;
-#X connect 46 2 6 0;
-#X connect 46 3 2 0;
-#X connect 46 4 4 0;
-#X connect 46 5 9 0;
-#X connect 52 0 53 0;
+#X connect 7 0 0 0;
+#X connect 8 0 23 2;
+#X connect 11 0 3 0;
+#X connect 11 0 23 1;
+#X connect 11 0 23 0;
+#X connect 23 0 3 1;
+#X connect 23 1 3 2;
+#X connect 26 0 45 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 34 0 43 0;
+#X connect 36 0 37 0;
+#X connect 37 0 39 0;
+#X connect 38 0 51 0;
+#X connect 42 0 34 0;
+#X connect 43 0 44 0;
+#X connect 45 0 1 0;
+#X connect 45 1 4 0;
+#X connect 45 2 2 0;
+#X connect 45 3 7 0;
+#X connect 50 0 41 0;
+#X connect 51 0 52 0;
+#X connect 52 0 36 0;
 #X connect 53 0 54 0;
-#X connect 54 0 55 0;
-#X connect 57 0 60 0;
-#X connect 58 0 57 0;
-#X connect 60 0 61 0;
-#X connect 61 0 59 0;
-#X connect 63 0 64 0;
-#X connect 64 0 65 0;
-#X connect 65 0 67 0;
-#X connect 66 0 63 0;
-#X connect 69 0 70 0;
-#X connect 70 0 71 0;
-#X connect 72 0 13 0;
-#X coords 0 -1 1 120 140 120 1 0 0;
+#X connect 54 0 56 0;
+#X connect 54 0 58 0;
+#X connect 54 1 57 0;
+#X connect 54 1 61 0;
+#X connect 56 0 60 0;
+#X connect 57 0 59 0;
+#X connect 58 0 59 0;
+#X connect 61 0 60 0;
+#X connect 63 0 50 0;
+#X coords 0 -1 1 250 140 214 1 0 0;
