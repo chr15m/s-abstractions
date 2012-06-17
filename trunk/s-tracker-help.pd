@@ -1,14 +1,22 @@
-#N canvas 85 72 444 473 10;
-#X obj 278 26 sssad/datastore;
+#N canvas 85 72 449 633 10;
+#X obj 315 52 sssad/datastore;
 #N canvas 4 20 605 663 datastore 0;
 #X obj 10 10 r SSSADDATA;
 #X msg 10 30 \; SSSAD track/sequence 60 0 60 0 0 0 48 48 48 60 0 0
 0 0 0 65 \; SSSAD_ADMIN set \;;
 #X connect 0 0 1 0;
-#X restore 278 92 pd datastore;
-#X obj 155 26 r track/value;
-#X floatatom 155 49 5 0 0 0 - - -;
-#X obj 277 120 s-metro time;
-#X obj 7 78 s-tracker track 16 4 time/tick;
-#X text 8 1 Args: name length ticks-per-section timer-ticker;
+#X restore 315 118 pd datastore;
+#X obj 66 436 r track/value;
+#X floatatom 66 459 5 0 0 0 - - -;
+#X obj 314 146 s-metro time;
+#X obj 7 113 s-tracker track 16 4 time/tick;
+#X floatatom 7 423 5 0 0 0 - - -;
+#X text 209 91 1 hit load ->;
+#X floatatom 7 94 5 0 0 0 - - -;
+#X text 5 75 position \, or hit 'startstop' below;
+#X text 7 29 args: name length ticks-per-section timer-ticker;
+#X text 8 1 s-tracker provides a way to write looping sequences of
+numbers.;
 #X connect 2 0 3 0;
+#X connect 5 0 6 0;
+#X connect 8 0 5 0;
