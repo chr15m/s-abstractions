@@ -21,6 +21,8 @@
 #X obj 124 201 select \$2;
 #X obj 124 180 symbol \$2;
 #X obj 41 195 == \$1;
+#X obj 1 7 r ctlin;
+#X obj 1 27 unpack f f f;
 #X connect 0 0 6 0;
 #X connect 0 1 21 0;
 #X connect 0 2 5 0;
@@ -47,4 +49,8 @@
 #X connect 19 1 11 0;
 #X connect 20 0 19 0;
 #X connect 21 0 1 1;
+#X connect 22 0 23 0;
+#X connect 23 0 6 0;
+#X connect 23 1 21 0;
+#X connect 23 2 5 0;
 #X coords 0 0 1 1 150 25 0;

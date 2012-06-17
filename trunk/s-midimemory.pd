@@ -1,4 +1,4 @@
-#N canvas 32 141 598 499 10;
+#N canvas 32 141 670 499 10;
 #X obj 81 239 f;
 #X floatatom 161 63 5 0 0 0 - - -;
 #X obj 9 64 moses 127;
@@ -13,7 +13,7 @@
 #X msg 97 90 1;
 #X msg 144 92 0;
 #X obj 350 350 line;
-#X obj 386 73 table \$0-knobmem \$1;
+#X obj 419 34 table \$0-knobmem \$1;
 #X obj 161 40 mod \$1;
 #X obj 243 16 inlet;
 #X obj 17 5 inlet;
@@ -27,9 +27,11 @@
 #X msg 299 156 127;
 #X obj 315 178 s \$0-height;
 #X obj 63 5 r \$0-height;
-#X obj 160 17 r \$2/tick;
 #X obj 396 275 r \$2/ticklength;
 #X text 322 6 args: [length] [timername] [height];
+#X obj 419 78 s \$0-knobmem;
+#X obj 160 17 r \$2/tick;
+#X obj 419 56 x-sssad/tablesave \$0-knobmem \$1 \$4-knobmem;
 #X connect 0 0 21 0;
 #X connect 1 0 8 0;
 #X connect 1 0 19 0;
@@ -64,5 +66,6 @@
 #X connect 24 1 26 0;
 #X connect 25 0 26 0;
 #X connect 27 0 2 1;
-#X connect 28 0 15 0;
-#X connect 29 0 20 1;
+#X connect 28 0 20 1;
+#X connect 31 0 15 0;
+#X connect 32 0 30 0;

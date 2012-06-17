@@ -1,12 +1,5 @@
-This is a collection of abstractions for puredata, created by Chris McCormick.
+This is a collection of abstractions for puredata, created by Chris McCormick <chris@mccormick.cx>.
 
-These require puredata 0.39-2 from http://crca.ucsd.edu/~msp/software.html
+These require puredata 0.39-2 [or greater] from http://crca.ucsd.edu/~msp/software.html
 
-To install, run ./install from this directory. Then run pd as per normal.
-To uninstall run ./uninstall from this directory. The old file is in .pdrc.bak
-
-Have fun.
-
-chris@mccormick.cx
-http://mccormick.cx
-
+Have fun!
