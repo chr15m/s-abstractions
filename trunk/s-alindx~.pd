@@ -18,12 +18,13 @@
 of Tristan Chambers http://mbass.sf.net/pd-resources;
 #X text 211 79 Any mistakes are mine \, not his!;
 #X obj 10 38 hsl 64 16 0 127 0 0 \$0/crank \$1/crank crank -2 -6 0
-8 -260818 -1 -1 0 1;
+8 -260818 -1 -1 100 1;
 #X text 210 26 Args: [name];
 #X obj 277 108 r \$0/crank;
 #X obj 277 127 + 1;
 #X obj 277 146 / 80;
 #X obj 277 168 pack f 10;
+#X obj 401 493 sssad/auto \$0/crank \$1/crank;
 #X connect 0 0 8 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
